@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Touche pas au Klaxon</title>
+    <title>Touche pas au Klaxon - Accueil</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="b">
@@ -21,24 +21,18 @@
       <th scope="col">Date</th>
       <th scope="col">Heure</th>
       <th scope="col">Places Disponibles</th>
-      <th scope="col">Informations</th>
     </tr>
   </thead>
   <tbody>
     <?php foreach ($trajets as $trajet): ?>
         <tr class="text-center  align-middle">
             <td><?=  $trajet["ville_depart"] ?></td>
-            <td><?=  $trajet["depart_date_trajet"] ?></td>
-            <td><?=  $trajet["depart_date_trajet"] ?></td>
+            <td><?= date('d/m/Y', strtotime($trajet["depart_date_trajet"])) ?></td>
+            <td><?= date('H:i', strtotime($trajet["depart_date_trajet"])) ?></td>
             <td><?=  $trajet["ville_arrivee"] ?></td>
-            <td><?=  $trajet["arrivee_date_trajet"] ?></td>
-            <td><?=  $trajet["arrivee_date_trajet"] ?></td>
+            <td><?= date('d/m/Y', strtotime($trajet["arrivee_date_trajet"])) ?></td>
+            <td><?= date('H:i', strtotime($trajet["arrivee_date_trajet"])) ?></td>
             <td><?=  $trajet["places_dispo_trajet"] ?></td>
-            <td>
-                <a href="#" class="btn btn-sm btn-success">Voir</a>
-                <a href="#" class="btn btn-sm btn-primary">Modifier</a>
-                <a href="#" class="btn btn-sm btn-danger">Supprimer</a>
-            </td>
         </tr>
         <?php endforeach; ?>
   </tbody>

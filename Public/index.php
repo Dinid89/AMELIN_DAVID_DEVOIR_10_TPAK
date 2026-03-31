@@ -4,7 +4,7 @@ require_once '../vendor/autoload.php';
 require_once '../Controllers/TrajetController.php';
 require_once '../Controllers/UsersController.php';
 require_once '../Controllers/AgencesController.php';
-
+require_once '../Controllers/ListTrajetController.php';
 require_once '../Database/database.php';
 
 $router = new \Buki\Router\Router();
@@ -22,6 +22,11 @@ $router->get('/users', function() {
 $router->get('/agences', function() {
     $controller = new AgencesController();
     $controller->index();
+});
+
+$router->get('/trajets', function() {
+    $controller = new ListTrajetController();
+    $controller->listTrajets();
 });
 
 
