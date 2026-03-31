@@ -39,5 +39,7 @@
 </table>
     </div>
 
+<?php include 'Components/footer.php'; ?>
+    
 </body>
 </html>
