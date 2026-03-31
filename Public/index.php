@@ -42,5 +42,9 @@ $router->post('/login', function() {
     $controller->login();
 });
 
+$router->get('/Home', function() {
+    $controller = new TrajetController();
+    $controller->index();
+});
 
 $router->run();

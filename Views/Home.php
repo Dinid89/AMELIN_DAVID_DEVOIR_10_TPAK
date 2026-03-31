@@ -21,6 +21,7 @@
       <th scope="col">Date</th>
       <th scope="col">Heure</th>
       <th scope="col">Places Disponibles</th>
+      <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -33,6 +34,11 @@
             <td><?= date('d/m/Y', strtotime($trajet["arrivee_date_trajet"])) ?></td>
             <td><?= date('H:i', strtotime($trajet["arrivee_date_trajet"])) ?></td>
             <td><?=  $trajet["places_dispo_trajet"] ?></td>
+            <td>
+                <button class="btn btn-success text-decoration-none">Voir</button>
+                <button class="btn btn-warning text-decoration-none">Modifier</button>
+                <button class="btn btn-danger text-decoration-none">Supprimer</button>
+            </td>
         </tr>
         <?php endforeach; ?>
   </tbody>

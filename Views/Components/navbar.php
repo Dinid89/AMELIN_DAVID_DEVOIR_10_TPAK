@@ -1,3 +1,5 @@
+<?php if (session_status() === PHP_SESSION_NONE) session_start(); ?>
+
 <nav class="navbar bg-light">
   <div class="container-fluid d-flex justify-content-between align-items-center align-middle">
     <a class="navbar-brand" href="/">
@@ -35,7 +37,7 @@
     if (!empty($_SESSION['user']) && $_SESSION['user']) {
         echo '
         <div class="d-flex ms-auto m-2">
-            <a href="/annonces" class="btn btn-primary text-decoration-none">+ Ajouter un trajet</a>
+            <a href="/annonces" class="btn btn-primary text-decoration-none">+ Créer un trajet</a>
         </div>';
     }
 }
@@ -50,7 +52,7 @@
     if (!empty($_SESSION['user']['is_admin']) && $_SESSION['user']['is_admin']) {
         echo '<a href="#" class="btn btn-outline-secondary text-decoration-none">Bonjour Admin</a>';
     } else {
-        echo '<a href="#" class="btn btn-outline-secondary text-decoration-none">Bonjour ' . htmlspecialchars($_SESSION['user']['username']) . '</a>';
+        echo '<p class="text-success g-2 align-items-center align-middle justify-contentcenter p-2">Bonjour ' . htmlspecialchars($_SESSION['user']['prenom']) . ' !</p>';
     }
     }
     ?>
@@ -64,7 +66,7 @@
     */
 
     if (isset($_SESSION['user'])) {
-        echo '<a href="/profile" class="btn btn-outline-primary text-decoration-none">Profil</a>';
+        echo '<a href="/logout" class="btn btn-outline-danger text-decoration-none">Déconnexion</a>';
     } else {
         echo '<a href="/login" class="btn btn-outline-primary text-decoration-none">Connexion</a>';
     }
