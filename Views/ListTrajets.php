@@ -21,7 +21,7 @@
       <th scope="col">Date</th>
       <th scope="col">Heure</th>
       <th scope="col">Places Disponibles</th>
-      <th scope="col">Informations</th>
+      <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>

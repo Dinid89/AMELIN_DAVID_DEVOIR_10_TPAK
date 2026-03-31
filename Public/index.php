@@ -1,10 +1,13 @@
 <?php
 
 require_once '../vendor/autoload.php';
+
 require_once '../Controllers/TrajetController.php';
 require_once '../Controllers/UsersController.php';
 require_once '../Controllers/AgencesController.php';
 require_once '../Controllers/ListTrajetController.php';
+require_once '../Controllers/LoginController.php';
+
 require_once '../Database/database.php';
 
 $router = new \Buki\Router\Router();
@@ -29,12 +32,16 @@ $router->get('/trajets', function() {
     $controller->listTrajets();
 });
 
+$router->get('/login', function() {
+    $controller = new LoginController();
+    $controller->login();
+});
+
+$router->post('/login', function() {
+    $controller = new LoginController();
+    $controller->login();
+});
 
 
-
-
-
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
 
 $router->run();

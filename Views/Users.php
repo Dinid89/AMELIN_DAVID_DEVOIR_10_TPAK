@@ -18,16 +18,16 @@
       <th scope="col">Prénom</th>
       <th scope="col">Téléphone</th>
       <th scope="col">Mail</th>
-      <th scope="col">Informations</th>
+      <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
     <?php foreach ($users as $user): ?>
         <tr class="text-center  align-middle">
-            <td><?=  $user["nom_users"] ?></td>
-            <td><?=  $user["prenom_users"] ?></td>
-            <td><?=  $user["phone_users"] ?></td>
-            <td><?=  $user["mail_users"] ?></td>
+            <td class="text-uppercase"><?=  $user["nom_users"] ?></td>
+            <td><?= $user["prenom_users"] ?></td>
+            <td><?= $user["phone_users"] ?></td>
+            <td><?= $user["mail_users"] ?></td>
             <td>
                 <a href="#" class="btn btn-sm btn-success">Voir</a>
                 <a href="#" class="btn btn-sm btn-primary">Modifier</a>
