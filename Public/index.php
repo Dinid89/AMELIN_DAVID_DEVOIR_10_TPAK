@@ -34,14 +34,13 @@ $router->get('/trajets', function() {
 
 $router->get('/login', function() {
     $controller = new LoginController();
-    $controller->login();
+    $controller->showForm();
 });
 
 $router->post('/login', function() {
     $controller = new LoginController();
     $controller->login();
 });
-
 
 
 $router->run();
