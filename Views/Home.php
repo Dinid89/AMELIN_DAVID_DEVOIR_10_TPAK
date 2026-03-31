@@ -25,7 +25,13 @@
     </tr>
   </thead>
   <tbody>
-    <?php foreach ($trajets as $trajet): ?>
+    
+    <?php 
+      /**
+       * Affiche les détails du trajet.
+       */
+    foreach ($trajets as $trajet): ?>
+
         <tr class="text-center  align-middle">
             <td><?=  $trajet["ville_depart"] ?></td>
             <td><?= date('d/m/Y', strtotime($trajet["depart_date_trajet"])) ?></td>
@@ -35,9 +41,31 @@
             <td><?= date('H:i', strtotime($trajet["arrivee_date_trajet"])) ?></td>
             <td><?=  $trajet["places_dispo_trajet"] ?></td>
             <td>
-                <button class="btn btn-success text-decoration-none">Voir</button>
+                
+                <?php
+
+                /**
+                 * Affiche un bouton "Voir" pour les utilisateurs connectés, et des boutons "Modifier" et "Supprimer" pour les admins.
+                 */
+
+
+                if (isset($_SESSION['user']) && !empty($_SESSION['user']['is_admin']) && $_SESSION['user']['is_admin']):
+                else:
+                ?>
+                    <button class="btn btn-success text-decoration-none">Voir</button>
+                <?php 
+                endif;
+                ?>
+                
+                <?php
+                if (isset($_SESSION['is_admin']) && !empty($_SESSION['is_admin']) && $_SESSION['is_admin']):
+                ?>
                 <button class="btn btn-warning text-decoration-none">Modifier</button>
+              
                 <button class="btn btn-danger text-decoration-none">Supprimer</button>
+                 <?php
+                endif;
+                ?>
             </td>
         </tr>
         <?php endforeach; ?>

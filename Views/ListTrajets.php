@@ -25,7 +25,11 @@
     </tr>
   </thead>
   <tbody>
-    <?php foreach ($trajets as $trajet): ?>
+    <?php foreach ($trajets as $trajet): 
+    /**
+     * Affiche les détails du trajet pour les admins.
+     */    
+    ?>
         <tr class="text-center  align-middle">
             <td><?=  $trajet["ville_depart"] ?></td>
             <td><?= date('d/m/Y', strtotime($trajet["depart_date_trajet"])) ?></td>
