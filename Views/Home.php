@@ -38,6 +38,7 @@
                 <a href="#" class="btn btn-sm btn-success">Voir</a>
                 <a href="#" class="btn btn-sm btn-primary">Modifier</a>
                 <a href="#" class="btn btn-sm btn-danger">Supprimer</a>
+            </td>
         </tr>
         <?php endforeach; ?>
   </tbody>
