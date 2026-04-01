@@ -39,8 +39,11 @@
             <td><?= date('H:i', strtotime($trajet["arrivee_date_trajet"])) ?></td>
             <td><?=  $trajet["places_dispo_trajet"] ?></td>
             <td>
+                
                 <button class="btn btn-sm btn-success">Voir</button>
+                
                 <button class="btn btn-sm btn-primary">Modifier</button>
+                
                 <button class="btn btn-sm btn-danger">Supprimer</button>
             </td>    
         </tr>

@@ -29,7 +29,6 @@
             <td><?= $user["phone_users"] ?></td>
             <td><?= $user["mail_users"] ?></td>
             <td>
-                <a href="#" class="btn btn-sm btn-success">Voir</a>
                 <a href="#" class="btn btn-sm btn-primary">Modifier</a>
                 <a href="#" class="btn btn-sm btn-danger">Supprimer</a>
             </td>

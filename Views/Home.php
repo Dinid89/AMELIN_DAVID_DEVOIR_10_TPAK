@@ -52,7 +52,10 @@
 
                 <?php 
                 if (isset($_SESSION['user'])): ?>
-                <button class="btn btn-success text-decoration-none">Voir</button>
+                <button class="btn btn-success text-decoration-none" data-bs-toggle="modal" data-bs-target="#modal-<?= $trajet['id_trajets'] ?>">
+                    Voir
+                </button>
+                <?php include 'Components/modal.php' ?>
                 <?php endif; ?>
                 
                 <?php if (isset($_SESSION['user']) && !empty($_SESSION['user']['is_admin'])): ?>
@@ -67,6 +70,7 @@
     </div>
 
 <?php include 'Components/footer.php'; ?>
-    
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>    
 </body>
 </html>
