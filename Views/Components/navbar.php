@@ -14,9 +14,9 @@
     if (isset($_SESSION['user']) && !empty($_SESSION['user']['is_admin']) && $_SESSION['user']['is_admin']):
     ?>
     <div class="ms-3 d-flex gap-5">
-            <a href="/users">Utilisateurs</a>
-            <a href="/agences">Agences</a>
-            <a href="/trajets">Trajets</a>
+            <a href="/users" class="text-decoration-none text-uppercase">Utilisateurs</a>
+            <a href="/agences" class="text-decoration-none text-uppercase">Agences</a>
+            <a href="/trajets" class="text-decoration-none text-uppercase">Trajets</a>
     </div>
     <?php
     endif;

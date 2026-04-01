@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Touche pas au Klaxon - Accueil</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/app.css">
 </head>
-<body class="b">
+<body class="bg-light">
     
     <?php include 'Components/navbar.php'; ?>
 
@@ -52,14 +52,14 @@
 
                 <?php 
                 if (isset($_SESSION['user'])): ?>
-                <button class="btn btn-sm btn-success text-decoration-none" data-bs-toggle="modal" data-bs-target="#modal-<?= $trajet['id_trajets'] ?>">
+                <button class="btn btn-sm btn-success text-decoration-none text-white" data-bs-toggle="modal" data-bs-target="#modal-<?= $trajet['id_trajets'] ?>">
                     Voir
                 </button>
                 <?php include 'Components/modal.php' ?>
                 <?php endif; ?>
                 
                 <?php if (isset($_SESSION['user']) && !empty($_SESSION['user']['is_admin'])): ?>
-                <button class="btn btn-sm btn-warning">Modifier</button>
+                <button class="btn btn-sm btn-dark">Modifier</button>
                 <button class="btn btn-sm btn-danger">Supprimer</button>
                 <?php endif; ?>
             </td>
