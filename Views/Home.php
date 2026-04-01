@@ -47,25 +47,18 @@
                 /**
                  * Affiche un bouton "Voir" pour les utilisateurs connectés, et des boutons "Modifier" et "Supprimer" pour les admins.
                  */
-
-
-                if (isset($_SESSION['user']) && !empty($_SESSION['user']['is_admin']) && $_SESSION['user']['is_admin']):
-                else:
                 ?>
-                    <button class="btn btn-success text-decoration-none">Voir</button>
+
+
                 <?php 
-                endif;
-                ?>
+                if (isset($_SESSION['user'])): ?>
+                <button class="btn btn-success text-decoration-none">Voir</button>
+                <?php endif; ?>
                 
-                <?php
-                if (isset($_SESSION['is_admin']) && !empty($_SESSION['is_admin']) && $_SESSION['is_admin']):
-                ?>
-                <button class="btn btn-warning text-decoration-none">Modifier</button>
-              
-                <button class="btn btn-danger text-decoration-none">Supprimer</button>
-                 <?php
-                endif;
-                ?>
+                <?php if (isset($_SESSION['user']) && !empty($_SESSION['user']['is_admin'])): ?>
+                <button class="btn btn-warning">Modifier</button>
+                <button class="btn btn-danger">Supprimer</button>
+                <?php endif; ?>
             </td>
         </tr>
         <?php endforeach; ?>

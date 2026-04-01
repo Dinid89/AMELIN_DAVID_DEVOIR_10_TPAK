@@ -47,4 +47,11 @@ $router->get('/Home', function() {
     $controller->index();
 });
 
+$router->get('/logout', function() {
+    session_start();
+    session_destroy();
+    header('Location: /');
+    exit();
+});
+
 $router->run();

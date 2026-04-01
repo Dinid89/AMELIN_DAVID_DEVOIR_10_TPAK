@@ -13,16 +13,10 @@
 
     if (isset($_SESSION['user']) && !empty($_SESSION['user']['is_admin']) && $_SESSION['user']['is_admin']):
     ?>
-    <div>
-        <a href="/users">Utilisateurs</a>
-    </div>
-
-    <div>
-        <a href="/agences">Agences</a>
-    </div>
-
-    <div>
-        <a href="/trajets">Trajets</a>
+    <div class="ms-3 d-flex gap-5">
+            <a href="/users">Utilisateurs</a>
+            <a href="/agences">Agences</a>
+            <a href="/trajets">Trajets</a>
     </div>
     <?php
     endif;
@@ -43,16 +37,16 @@
 }
 ?>
    
-    <div class="d-flex justify-center align-items-center">  
+    <div class="d-flex justify-center align-items-center gap-3">  
     <?php
      /**
     *Affiche un message de bienvenue pour les utilisateurs connectés.
     */
     if (isset($_SESSION['user'])) {
     if (!empty($_SESSION['user']['is_admin']) && $_SESSION['user']['is_admin']) {
-        echo '<a href="#" class="btn btn-outline-secondary text-decoration-none">Bonjour Admin</a>';
+        echo '<span class="text-success text-decoration-none align-items-center align-middle justify-contentcenter p-2 mx-3">Bonjour Admin !</span>';
     } else {
-        echo '<p class="text-success g-2 align-items-center align-middle justify-contentcenter p-2">Bonjour ' . htmlspecialchars($_SESSION['user']['prenom']) . ' !</p>';
+        echo '<span class="text-success text-decoration-none align-items-center align-middle justify-contentcenter p-2 mx-3">Bonjour ' . htmlspecialchars($_SESSION['user']['prenom']) . ' !</span>';
     }
     }
     ?>
