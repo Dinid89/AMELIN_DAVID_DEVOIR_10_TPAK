@@ -31,7 +31,7 @@
     if (!empty($_SESSION['user']) && $_SESSION['user']) {
         echo '
         <div class="d-flex ms-auto m-2">
-            <a href="/annonces" class="btn btn-primary text-decoration-none">+ Créer un trajet</a>
+            <a href="/CreateTrajet" class="btn btn-primary text-decoration-none">+ Créer un trajet</a>
         </div>';
     }
 }

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Création de trajet</title>
+    <link rel="stylesheet" href="/assets/css/app.css">
+</head>
+<body class="bg-light">
+    <?php include 'Components/navbar.php'; ?>
+    <div class="container mt-4">
+        <div class="bg-primary text-white p-3 rounded">
+            <h2 class="text-center">Créer un nouveau trajet</h2>
+        </div> 
+        <hr>
+        <form action="/CreateTrajet" method="POST" class="w-50 mx-auto">
+
+            <div class="mb-3">
+                <label class="form-label">Votre nom :</label>
+                <input type="text" class="form-control text-center" value="<?= htmlspecialchars($_SESSION['user']['prenom'] . ' ' . $_SESSION['user']['nom']) ?>" readonly>
+            </div>
+
+            <div class="mb-3">
+                <label for="ville_depart" class="form-label">Ville de départ :</label>
+                <select class="form-select" id="ville_depart" name="ville_depart" required>
+                    <option value="">Sélectionnez une ville</option>
+                    <?php foreach ($agences as $agence): ?>
+                        <option value="<?= $agence['id_agence'] ?>">
+                            <?= htmlspecialchars($agence['ville_agence']) ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="depart_date_trajet" class="form-label">Date et heure de départ :</label>
+                <input type="datetime-local" class="form-control" id="depart_date_trajet" name="depart_date_trajet" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="ville_arrivee" class="form-label">Ville d'arrivée :</label>
+                <select class="form-select" id="ville_arrivee" name="ville_arrivee" required>
+                    <option value="">Sélectionnez une ville</option>
+                    <?php 
+                    $ville_depart_id = $_POST['ville_depart'] ?? null;
+                    foreach ($agences as $agence): ?>
+                        <option value="<?= $agence['id_agence'] ?>" 
+                            <?= ($agence['id_agence'] == $ville_depart_id) ? 'disabled' : '' ?>>
+                            <?= htmlspecialchars($agence['ville_agence']) ?>
+                            <?= ($agence['id_agence'] == $ville_depart_id) ? ' (départ)' : '' ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="arrivee_date_trajet" class="form-label">Date et heure d'arrivée :</label>
+                <input type="datetime-local" class="form-control" id="arrivee_date_trajet" name="arrivee_date_trajet" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="total_place_trajet" class="form-label">Nombre total de places (conducteur inclus) :</label>
+                <input type="number" class="form-control" id="total_place_trajet" name="total_place_trajet" min="1" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="places_dispo_trajet" class="form-label">Nombre de places disponibles :</label>
+                <input type="number" class="form-control" id="places_dispo_trajet" name="places_dispo_trajet" min="1" required>
+            </div>
+
+            <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">Créer le trajet</button>
+            </div>
+
+        </form>
+    </div>
+    <?php include 'Components/footer.php'; ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

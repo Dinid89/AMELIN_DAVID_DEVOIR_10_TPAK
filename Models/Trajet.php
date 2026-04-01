@@ -33,6 +33,26 @@ class Trajet {
             throw new Exception("Erreur lors de la récupération des trajets: " . $e->getMessage());
         }
     }
+
+    public function createTrajet($data) {
+        try {
+            $stmt = $this->pdo->prepare("
+                INSERT INTO trajets (id_users, depart_agence_trajet, depart_date_trajet, arrivee_agence_trajet, arrivee_date_trajet, total_place_trajet, places_dispo_trajet)
+                VALUES (:id_users, :depart_agence_trajet, :depart_date_trajet, :arrivee_agence_trajet, :arrivee_date_trajet, :total_place_trajet, :places_dispo_trajet)
+            ");
+            $stmt->execute([
+                ':id_users' => $data['id_users'],
+                ':depart_agence_trajet' => $data['ville_depart'],
+                ':depart_date_trajet' => $data['depart_date_trajet'],
+                ':arrivee_agence_trajet' => $data['ville_arrivee'],
+                ':arrivee_date_trajet' => $data['arrivee_date_trajet'],
+                ':total_place_trajet' => $data['total_place_trajet'],
+                ':places_dispo_trajet' => $data['places_dispo_trajet']
+            ]);
+        } catch (PDOException $e) {
+            throw new Exception("Erreur lors de la création du trajet: " . $e->getMessage());
+        }
+    }
 }
 
 
