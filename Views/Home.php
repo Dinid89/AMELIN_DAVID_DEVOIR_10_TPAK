@@ -52,15 +52,15 @@
 
                 <?php 
                 if (isset($_SESSION['user'])): ?>
-                <button class="btn btn-success text-decoration-none" data-bs-toggle="modal" data-bs-target="#modal-<?= $trajet['id_trajets'] ?>">
+                <button class="btn btn-sm btn-success text-decoration-none" data-bs-toggle="modal" data-bs-target="#modal-<?= $trajet['id_trajets'] ?>">
                     Voir
                 </button>
                 <?php include 'Components/modal.php' ?>
                 <?php endif; ?>
                 
                 <?php if (isset($_SESSION['user']) && !empty($_SESSION['user']['is_admin'])): ?>
-                <button class="btn btn-warning">Modifier</button>
-                <button class="btn btn-danger">Supprimer</button>
+                <button class="btn btn-sm btn-warning">Modifier</button>
+                <button class="btn btn-sm btn-danger">Supprimer</button>
                 <?php endif; ?>
             </td>
         </tr>

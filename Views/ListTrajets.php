@@ -40,7 +40,10 @@
             <td><?=  $trajet["places_dispo_trajet"] ?></td>
             <td>
                 
-                <button class="btn btn-sm btn-success">Voir</button>
+                <button class="btn btn-sm btn-success text-decoration-none" data-bs-toggle="modal" data-bs-target="#modal-<?= $trajet['id_trajets'] ?>">
+                    Voir
+                </button>
+                <?php include 'Components/modal.php' ?>
                 
                 <button class="btn btn-sm btn-primary">Modifier</button>
                 
@@ -54,6 +57,7 @@
 
 <?php include 'Components/footer.php'; ?>
 
-    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>    
+
 </body>
 </html>

@@ -1,0 +1,27 @@
+{
+  "name": "touche_pas_au_klaxon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dinid89/AMELIN_DAVID_DEVOIR_10_TPAK.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Dinid89/AMELIN_DAVID_DEVOIR_10_TPAK/issues"
+  },
+  "homepage": "https://github.com/Dinid89/AMELIN_DAVID_DEVOIR_10_TPAK#readme",
+  "devDependencies": {
+    "sass": "^1.98.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8"
+  }
+}

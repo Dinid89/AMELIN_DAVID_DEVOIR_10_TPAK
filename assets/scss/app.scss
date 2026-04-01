@@ -1,0 +1,21 @@
+// Charte graphique de l'application Touche pas au Klaxon
+
+$tpak-light: #f1f8fc; 
+$tpak-blue: #0074c7;
+$tpak-navy: #00497c;
+$tpak-gray: #384050;
+$tpak-red: #cd2c2e;
+$tpak-green: #82b864;
+
+// liens Bootstrap
+
+$primary: $tpak-blue;
+$secondary: $tpak-navy;
+$success: $tpak-green;
+$danger: $tpak-red;
+$light: $tpak-light;
+$dark: $tpak-gray;
+
+
+@import "bootstrap/scss/bootstrap";
+
