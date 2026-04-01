@@ -53,6 +53,42 @@ class Trajet {
             throw new Exception("Erreur lors de la création du trajet: " . $e->getMessage());
         }
     }
+
+    public function getTrajetById($id_trajets) {
+        try {
+            $stmt = $this->pdo->prepare("SELECT * FROM trajets WHERE id_trajets = :id_trajets");
+            $stmt->execute([':id_trajets' => $id_trajets]);
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            throw new Exception("Erreur lors de la récupération du trajet: " . $e->getMessage());
+        }
+    }
+
+    public function updateTrajet($id_trajets, $data) {
+        try {
+            $stmt = $this->pdo->prepare("
+                UPDATE trajets 
+                SET depart_agence_trajet = :depart_agence_trajet, 
+                    depart_date_trajet = :depart_date_trajet, 
+                    arrivee_agence_trajet = :arrivee_agence_trajet, 
+                    arrivee_date_trajet = :arrivee_date_trajet, 
+                    total_place_trajet = :total_place_trajet, 
+                    places_dispo_trajet = :places_dispo_trajet
+                WHERE id_trajets = :id_trajets
+            ");
+            $stmt->execute([
+                ':depart_agence_trajet' => $data['ville_depart'],
+                ':depart_date_trajet' => $data['depart_date_trajet'],
+                ':arrivee_agence_trajet' => $data['ville_arrivee'],
+                ':arrivee_date_trajet' => $data['arrivee_date_trajet'],
+                ':total_place_trajet' => $data['total_place_trajet'],
+                ':places_dispo_trajet' => $data['places_dispo_trajet'],
+                ':id_trajets' => $id_trajets
+            ]);
+        } catch (PDOException $e) {
+            throw new Exception("Erreur lors de la mise à jour du trajet: " . $e->getMessage());
+        }
+    }
 }
 
 

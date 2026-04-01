@@ -25,6 +25,7 @@ class LoginController {
             $_SESSION['user'] = [
                 'id'     => $user['id_users'],
                 'email'  => $user['mail_users'],
+                'phone'  => $user['phone_users'],
                 'prenom' => $user['prenom_users'],
                 'nom'    => $user['nom_users'],
                 'is_admin' => $user['is_admin_users']

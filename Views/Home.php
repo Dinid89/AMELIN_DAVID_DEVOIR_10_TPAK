@@ -59,9 +59,13 @@
                 <?php endif; ?>
                 
                 <?php if (isset($_SESSION['user']) && !empty($_SESSION['user']['is_admin'])): ?>
-                <button class="btn btn-sm btn-dark">Modifier</button>
-                <button class="btn btn-sm btn-danger">Supprimer</button>
+                
+                    <a href="/EditTrajet/<?= $trajet['id_trajets'] ?>" class="btn btn-sm btn-dark">Modifier</a>
                 <?php endif; ?>
+            
+                
+                <button class="btn btn-sm btn-danger">Supprimer</button>
+    
             </td>
         </tr>
         <?php endforeach; ?>

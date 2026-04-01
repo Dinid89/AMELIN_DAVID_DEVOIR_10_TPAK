@@ -11,6 +11,7 @@ require_once '../Controllers/AgencesController.php';
 require_once '../Controllers/ListTrajetController.php';
 require_once '../Controllers/LoginController.php';
 require_once '../Controllers/CreateTrajetController.php';
+require_once '../Controllers/EditTrajetController.php';
 
 require_once '../Database/database.php';
 
@@ -66,6 +67,16 @@ $router->get('/CreateTrajet', function() {
 $router->post('/CreateTrajet', function() {
     $controller = new CreateTrajetController();
     $controller->store();
+});
+
+$router->get('/EditTrajet/{id}', function($id) {
+    $controller = new EditTrajetController();
+    $controller->showForm($id);
+});
+
+$router->post('/EditTrajet/{id}', function($id) {
+    $controller = new EditTrajetController();
+    $controller->update($id);
 });
 
 
