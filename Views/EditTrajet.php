@@ -86,7 +86,9 @@
         </fieldset>
 
         <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-primary">Valider la modification</button>
+        <button type="submit" class="btn btn-primary">
+                Valider la modification
+        </button>
         </div>
 
     </form>

@@ -41,14 +41,21 @@
             <td><?=  $trajet["places_dispo_trajet"] ?></td>
             <td>
                 
+                
+                <div class="d-flex justify-content-center gap-2">
                 <button class="btn btn-sm btn-success text-white text-decoration-none" data-bs-toggle="modal" data-bs-target="#modal-<?= $trajet['id_trajets'] ?>">
                     Voir
                 </button>
                 <?php include 'Components/modal.php' ?>
                 
-                <button class="btn btn-sm btn-dark text-white">Modifier</button>
+                <a href="/EditTrajet/<?= $trajet['id_trajets'] ?>" class="btn btn-sm btn-dark">Modifier</a>
+
                 
-                <button class="btn btn-sm btn-danger">Supprimer</button>
+                <form method="POST" action="/DeleteTrajet/<?= $trajet['id_trajets'] ?>"
+                    onsubmit="return confirm('Supprimer ce trajet ?')">
+                    <button type="submit" class="btn btn-sm btn-danger">Supprimer</button>
+                </form>
+                </div>
             </td>    
         </tr>
         <?php endforeach; ?>

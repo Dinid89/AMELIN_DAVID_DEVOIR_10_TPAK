@@ -89,6 +89,15 @@ class Trajet {
             throw new Exception("Erreur lors de la mise à jour du trajet: " . $e->getMessage());
         }
     }
+
+    public function deleteTrajet($id_trajets) {
+        try {
+            $stmt = $this->pdo->prepare("DELETE FROM trajets WHERE id_trajets = :id_trajets");
+            $stmt->execute([':id_trajets' => $id_trajets]);
+        } catch (PDOException $e) {
+            throw new Exception("Erreur lors de la suppression du trajet: " . $e->getMessage());
+        }
+    }
 }
 
 

@@ -29,8 +29,10 @@
             <td><?= $user["phone_users"] ?></td>
             <td><?= $user["mail_users"] ?></td>
             <td>
-                <button class="btn btn-sm btn-dark text-white">Modifier</button>
-                <button class="btn btn-sm btn-danger text-white">Supprimer</button>
+                <div class="d-flex justify-content-center gap-2">
+                    <button onclick="alert('Pas encore possible sur cette version')" class="btn btn-sm btn-dark text-white">Modifier</button>
+                    <button onclick="alert('Pas encore possible sur cette version')" class="btn btn-sm btn-danger text-white">Supprimer</button>
+                </div> 
             </td>
         </tr>
         <?php endforeach; ?>

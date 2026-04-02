@@ -10,6 +10,14 @@
     
     <?php include 'Components/navbar.php'; ?>
 
+    <?php if (isset($_SESSION['flash'])): ?>
+    <div class="alert alert-success alert-dismissible fade show mx-3 mt-3" role="alert">
+        <?= $_SESSION['flash'] ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    <?php unset($_SESSION['flash']); ?>
+    <?php endif; ?>
+
     <div>
         <table class="table table-bordered table-hover mt-2">
   <thead>
@@ -49,7 +57,7 @@
                  */
                 ?>
 
-
+                <div class="d-flex justify-content-center gap-2">
                 <?php 
                 if (isset($_SESSION['user'])): ?>
                 <button class="btn btn-sm btn-success text-decoration-none text-white" data-bs-toggle="modal" data-bs-target="#modal-<?= $trajet['id_trajets'] ?>">
@@ -58,13 +66,17 @@
                 <?php include 'Components/modal.php' ?>
                 <?php endif; ?>
                 
-                <?php if (isset($_SESSION['user']) && !empty($_SESSION['user']['is_admin'])): ?>
+                <?php if (isset($_SESSION['user']) && 
+                (!empty($_SESSION['user']['is_admin']) || $_SESSION['user']['id'] == $trajet['id_users'])): ?>
+                <a href="/EditTrajet/<?= $trajet['id_trajets'] ?>" class="btn btn-sm btn-dark">Modifier</a>
                 
-                    <a href="/EditTrajet/<?= $trajet['id_trajets'] ?>" class="btn btn-sm btn-dark">Modifier</a>
+                <form method="POST" action="/DeleteTrajet/<?= $trajet['id_trajets'] ?>"
+                    onsubmit="return confirm('Supprimer ce trajet ?')">
+                    <button type="submit" class="btn btn-sm btn-danger">Supprimer</button>
+                </form>
+                
                 <?php endif; ?>
-            
-                
-                <button class="btn btn-sm btn-danger">Supprimer</button>
+                </div>
     
             </td>
         </tr>
