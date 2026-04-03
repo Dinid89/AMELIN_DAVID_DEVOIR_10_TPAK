@@ -90,6 +90,7 @@
     </div>
 
 </form>
+    </div>
 
     
     <?php include 'Components/footer.php'; ?>

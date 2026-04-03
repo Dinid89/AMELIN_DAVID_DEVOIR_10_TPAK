@@ -17,11 +17,11 @@
     <form action="/EditTrajet/<?= $trajet['id_trajets'] ?>" method="POST" class="w-100 mx-auto">
 
         <fieldset class="border border-1 border-primary rounded p-3 mb-3">
-            <legend class="float-none w-auto px-2 text-primary fw-bold">Vos informations</legend>
+            <legend class="float-none w-auto px-2 text-primary fw-bold">Auteur :</legend>
             <div class="d-flex flex-column gap-2">
-                <input type="text" class="form-control text-center" value="<?= htmlspecialchars($_SESSION['user']['prenom'] . ' ' . $_SESSION['user']['nom']) ?>" readonly>
-                <input type="text" class="form-control text-center" value="<?= htmlspecialchars($_SESSION['user']['email']) ?>" readonly>
-                <input type="text" class="form-control text-center" value="<?= htmlspecialchars($_SESSION['user']['phone']) ?>" readonly>
+                <input type="text" class="form-control text-center" value="<?= htmlspecialchars($trajet['prenom_users'] . ' ' . $trajet['nom_users']) ?>" readonly>
+                <input type="text" class="form-control text-center" value="<?= htmlspecialchars($trajet['mail_users']) ?>" readonly>
+                <input type="text" class="form-control text-center" value="<?= htmlspecialchars($trajet['phone_users']) ?>" readonly>
             </div>
         </fieldset>
 

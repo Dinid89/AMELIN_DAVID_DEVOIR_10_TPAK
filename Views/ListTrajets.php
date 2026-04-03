@@ -56,6 +56,7 @@
                 </button>
                 <?php include 'Components/modal.php' ?>
                 
+                
                 <a href="/EditTrajet/<?= $trajet['id_trajets'] ?>" class="btn btn-sm btn-dark">Modifier</a>
 
                 
