@@ -20,9 +20,11 @@
         </form>
         <?php if (isset($error)) echo "<p class='text-danger mt-2'>$error</p>"; ?>
 
-/**
- * Possibilité de voir les trajets en cours (sans détail) sans être connecté
- */ 
+
+
+<!--Possibilité de voir les trajets en cours (sans détail) sans être connecté -->
+
+ 
 
         <div class="text-center p-3">
             <p>ou</p>

@@ -18,10 +18,8 @@
 
         <form action="/EditTrajet/<?= $trajet['id_trajets'] ?>" method="POST" class="w-100 mx-auto">
 
-/**
- * Récupère les informations de l'auteur du trajet (non modifiable)
- */ 
-
+<!-- Récupère les informations de l'auteur du trajet (non modifiable) -->
+ 
             <fieldset class="border border-1 border-primary rounded p-3 mb-3">
                 <legend class="float-none w-auto px-2 text-primary fw-bold">Auteur :</legend>
                 <div class="d-flex flex-column gap-2">
@@ -33,9 +31,7 @@
 
             <div class="d-flex justify-content-between gap-3 mb-3">
 
-/**
- * Récupère les informations de départ et d'arrivée du trajet, avec des listes déroulantes pour les villes (agences) et des champs de date/heure pré-remplis
- */             
+<!-- Récupère les informations de départ et d'arrivée du trajet, avec des listes déroulantes pour les villes (agences) et des champs de date/heure pré-remplis -->             
 
                 <fieldset class="border border-2 rounded p-4 flex-fill">
                     <legend class="float-none w-auto px-2 text-primary fw-bold">Départ</legend>

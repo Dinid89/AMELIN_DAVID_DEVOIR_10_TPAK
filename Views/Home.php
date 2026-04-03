@@ -57,6 +57,7 @@
                             /**
                              * Affiche un bouton "Voir" pour les utilisateurs connectés, et des boutons "Modifier" et "Supprimer" pour les admins.
                              */
+                            
                             ?>
 
                             <div class="d-flex justify-content-center gap-2">

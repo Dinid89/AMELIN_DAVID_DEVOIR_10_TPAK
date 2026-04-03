@@ -32,9 +32,9 @@
                         <td><?= $user["mail_users"] ?></td>
                         <td>
 
-/**
- * Dans une prochaine version : modifier et supprimer les utilisateurs
- */ 
+
+<!-- Dans une prochaine version : modifier et supprimer les utilisateurs-->
+
                             <div class="d-flex justify-content-center gap-2">
                                 <button onclick="alert('Pas encore possible sur cette version')" class="btn btn-sm btn-dark text-white">Modifier</button>
                                 <button onclick="alert('Pas encore possible sur cette version')" class="btn btn-sm btn-danger text-white">Supprimer</button>

@@ -23,9 +23,7 @@
                 <legend class="float-none w-auto px-2 text-primary fw-bold">Informations de l'agence</legend>
                 <div class="d-flex flex-column gap-3 mb-3">
 
-/**
- * A renseigner dans une prochaine version Nom agence + Adresse complète
- */ 
+<!-- A renseigner dans une prochaine version Nom agence + Adresse complète --> 
 
                     <label for="ville_agence" class="form-label">Nom de l'agence :</label>
                     <input type="text" class="form-control" id="nom_agence" name="nom_agence" placeholder="Ne rien mettre pour le moment">

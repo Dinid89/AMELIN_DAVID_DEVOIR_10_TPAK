@@ -13,9 +13,9 @@
     <?php include 'Components/navbar.php'; ?>
 
 
-/**
- * Message flash pour les actions de création, modification et suppression
- */ 
+
+ <!-- Message flash pour les actions de création, modification et suppression -->
+
 
 
     <?php if (isset($_SESSION['flash'])): ?>
