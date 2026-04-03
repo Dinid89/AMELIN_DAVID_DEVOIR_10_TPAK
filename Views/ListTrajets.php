@@ -11,6 +11,14 @@
     
     <?php include 'Components/navbar.php'; ?>
 
+    <?php if (isset($_SESSION['flash'])): ?>
+    <div class="alert alert-success alert-dismissible fade show mx-3 mt-3" role="alert">
+        <?= $_SESSION['flash'] ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    <?php unset($_SESSION['flash']); ?>
+    <?php endif; ?>
+
     <div>
         <table class="table table-bordered table-hover mt-2">
   <thead>

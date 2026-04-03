@@ -13,6 +13,9 @@ require_once '../Controllers/LoginController.php';
 require_once '../Controllers/CreateTrajetController.php';
 require_once '../Controllers/EditTrajetController.php';
 require_once '../Controllers/DeleteTrajetController.php';
+require_once '../Controllers/CreateAgenceController.php';
+require_once '../Controllers/EditAgenceController.php';
+require_once '../Controllers/DeleteAgenceController.php';
 
 require_once '../Database/database.php';
 
@@ -84,6 +87,33 @@ $router->post('/DeleteTrajet/:id', function($id) {
     $controller = new DeleteTrajetController();
     $controller->delete($id);
 });
+
+$router->get('/CreateAgence', function() {
+    $controller = new CreateAgenceController();
+    $controller->showForm();
+});
+
+$router->post('/CreateAgence', function() {
+    $controller = new CreateAgenceController();
+    $controller->store();
+});
+
+$router->get('/EditAgence/:id', function($id) {
+    $controller = new EditAgenceController();
+    $controller->showForm($id);
+});
+
+$router->post('/EditAgence/:id', function($id) {
+    $controller = new EditAgenceController();
+    $controller->update($id);
+});
+
+$router->post('/DeleteAgence/:id', function($id) {
+    $controller = new DeleteAgenceController();
+    $controller->delete($id);
+});
+
+
 
 
 

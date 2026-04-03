@@ -6,19 +6,12 @@ require_once __DIR__ . '/../Models/Agence.php';
 class EditTrajetController {
 
     public function showForm($id_trajet) {
-        if (session_status() === PHP_SESSION_NONE) session_start();
-
         $trajetModel = new Trajet();
         $trajet = $trajetModel->getTrajetById($id_trajet);
 
         if (!$trajet) {
-            header('Location: /');
-            exit();
-        }
-
-        if ($trajet['id_users'] != $_SESSION['user']['id'] && empty($_SESSION['user']['is_admin'])) {
-            header('Location: /');
-            exit();
+            echo "Trajet non trouvé.";
+            return;
         }
 
         $agence = new Agence();
@@ -28,19 +21,8 @@ class EditTrajetController {
     }
 
     public function update($id_trajet) {
-        if (session_status() === PHP_SESSION_NONE) session_start();
-
-        $trajetModel = new Trajet();
-        $trajet = $trajetModel->getTrajetById($id_trajet);
-
-        if (!$trajet) {
-            header('Location: /');
-            exit();
-        }
-
-        if ($trajet['id_users'] != $_SESSION['user']['id'] && empty($_SESSION['user']['is_admin'])) {
-            header('Location: /');
-            exit();
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
         }
 
         $data = filter_input_array(INPUT_POST, [
@@ -64,11 +46,15 @@ class EditTrajetController {
 
         $data['id_users'] = $_SESSION['user']['id'];
 
-        $trajetModel->updateTrajet($id_trajet, $data);
+        $trajet = new Trajet();
+        $trajet->updateTrajet($id_trajet, $data);
 
         $_SESSION['flash'] = "Trajet modifié avec succès !";
         header('Location: /');
         exit();
+
     }
 }
+
+
 ?>

@@ -23,6 +23,50 @@ class Agence {
             throw new Exception("Erreur lors de la récupération des agences: " . $e->getMessage());
         }
     }
+
+    public function createAgence($ville_agence) {
+        try {
+            $stmt = $this->pdo->prepare("INSERT INTO agences (ville_agence) VALUES (:ville_agence)");
+            $stmt->bindParam(':ville_agence', $ville_agence, PDO::PARAM_STR);
+            $stmt->execute();
+        } catch (PDOException $e) {
+            throw new Exception("Erreur lors de la création de l'agence: " . $e->getMessage());
+        }
+    }
+
+    public function getAgenceById($id_agence) {
+        try {
+            $stmt = $this->pdo->prepare("SELECT * FROM agences WHERE id_agence = :id_agence");
+            $stmt->bindParam(':id_agence', $id_agence, PDO::PARAM_INT);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            throw new Exception("Erreur lors de la récupération de l'agence: " . $e->getMessage());
+        }
+    }
+
+    public function updateAgence($id_agence, $ville_agence) {
+        try {
+            $stmt = $this->pdo->prepare("UPDATE agences SET ville_agence = :ville_agence WHERE id_agence = :id_agence");
+            $stmt->bindParam(':ville_agence', $ville_agence, PDO::PARAM_STR);
+            $stmt->bindParam(':id_agence', $id_agence, PDO::PARAM_INT);
+            $stmt->execute();
+        } catch (PDOException $e) {
+            throw new Exception("Erreur lors de la mise à jour de l'agence: " . $e->getMessage());
+        }
+    }
+
+    public function deleteAgence($id_agence) {
+        try {
+            $stmt = $this->pdo->prepare("DELETE FROM agences WHERE id_agence = :id_agence");
+            $stmt->bindParam(':id_agence', $id_agence, PDO::PARAM_INT);
+            $stmt->execute();
+        } catch (PDOException $e) {
+            throw new Exception("Erreur lors de la suppression de l'agence: " . $e->getMessage());
+        }
+    }
+
+    
 }
 
 ?>
