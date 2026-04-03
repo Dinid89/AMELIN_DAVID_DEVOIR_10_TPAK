@@ -1,0 +1,90 @@
+#Bienvenue sur l'application TOUCHE PAS AU KLAXON
+
+Version : Beta
+
+##DESCRIPTION
+
+TPAK est une application permettant de diffuser au sein de l’entreprise 
+les trajets prévus entre les différents sites afin de favoriser le covoiturage.
+
+L'application est disponible en Intranet et uniquement en Desktop pour cette version.
+
+##STACK TECHNIQUE 
+
+- PHP : Langage du code est le php, Nous utilisons également du HTML et CSS dans le code.
+Architecture MVC
+
+- MYSQL : La base de donnée est hébergée sur le serveur PHPMyAdmin et peut être modifiée directement sur la BBD ou 
+sur l'application directement
+
+- BOOTSTRAP: Nous utlisons la librairie bootstrap pour la mise en page du site pour qu'elle soit le plus simple 
+et lisible possible
+
+- SASS : Afin de garantir une maintenabilité et réutilisabilité du code nous avons installé Sass afin de définir plus
+facilement les codes couleurs et de design de l'application
+
+- Izniburak router PHP
+
+##INSTALLATION
+
+###Prérequis
+
+- PHP 8.x.x
+- MySQL - WAMP
+- Composer 
+- NodeJS 
+
+1- Cloner le projet : 
+git clone via GitHub
+
+2- Installer les dépendances :
+'composer install' 
+
+3- Importer la base de données : 
+mysql -u root -p tpak < database/schema.sql
+mysql -u root -p tpak < database/seed.sql
+
+4- Lancer le serveur :
+'php -S localhost:8000 -t public'
+
+
+##COMPTE DE TEST
+
+Afin de réaliser le test du site nous avons crée 2 comptes
+
+Utilisateur 1 : Utilisateur classique connecté ( peut voir les détails des trajets et modifier ou supprimer ses trajets)
+test@email.com
+mdp : test123
+
+Utilisateur 2 : Administrateur (peut gérer l'ensemble du site ajouter, modifier, supprimer les utilisateurs, agences, trajetsS)
+admin@email.com
+mdp : admin123
+
+Utilisateur 0 : Utilisateur non connecté (peut seulement voir les trajets en cours sans le détail)
+
+Résumé :
+- Consultation des trajets disponibles (tous)
+- Détails d'un trajet — modal (connecté)
+- Créer / Modifier / Supprimer ses trajets (connecté)
+- Gestion complète utilisateurs, agences, trajets (admin)
+
+##STRUCTURE DES DOSSIERS
+
+CONTROLLER : Logique des pages
+
+DATABASE : Base de donnée
+
+MODELS: Accès à la base de données
+
+PUBLIC : 
+Index.php : Routes des pages
+CSS Sass (le serveur se lance ici)
+
+COMPONENTS: Composants des parties du site (Header, Footer, Modals)
+Navbar utilisateur connecté : Bouton de deconnexion + Ajouter un trajet
+Navbar pour admin : toutes les pages
+Navbar pour utilisateur non connecté : bouton de connexion
+
+VIEWS : Les vues des pages Utilisateurs, Trajets, Agences, Home
+Modification des Trajets et Agences (pour admin)
+HTML + PHP
