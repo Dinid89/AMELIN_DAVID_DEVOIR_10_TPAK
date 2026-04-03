@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Controle des données de la BBD pour la suppression d'agences
+ */
+
 require_once __DIR__ . '/../Models/Agence.php';
 
 class DeleteAgenceController {
@@ -14,6 +18,10 @@ class DeleteAgenceController {
 
         $agenceModel = new Agence();
         $agenceModel->deleteAgence($id_agence);
+
+        /**
+ * message flash de suppression d'agence
+ */
 
         $_SESSION['flash'] = "Agence supprimée avec succès !";
         header('Location: /agences');

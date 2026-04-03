@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Controle des données de la BBD la modification des agences
+ */
+
 require_once __DIR__ . '/../Models/Agence.php';
 
 class EditAgenceController {

@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Controle des données de la BBD pour la création d'un trajet
+ */
+
 require_once __DIR__ . '/../Models/Agence.php';
 require_once __DIR__ . '/../Models/Trajet.php';
 

@@ -10,6 +10,10 @@ class Trajet {
         $this->pdo = $database->getConnection();
     }
 
+/**
+ * Récupération de tous les trajets disponibles avec les noms des villes de départ et d'arrivée,
+ */ 
+
     public function getAllTrajets() {
         try {
             $stmt = $this->pdo->query("

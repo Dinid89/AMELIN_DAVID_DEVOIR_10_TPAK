@@ -1,6 +1,6 @@
 <?php
 /**
- * Récupération de la base de données
+ * Récupération de la base de données PHPMyAdmin
  * 
  */
 

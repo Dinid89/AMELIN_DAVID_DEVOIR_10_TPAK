@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Controle des données de la BBD pour la création d'agences
+ */
+
 require_once __DIR__ . '/../Models/Agence.php';
 
 class CreateAgenceController {
@@ -20,6 +24,10 @@ class CreateAgenceController {
 
         $agenceModel = new Agence();
         $agenceModel->createAgence($ville_agence);
+
+        /**
+        * message flash 
+        */
 
         $_SESSION['flash'] = "Agence créée avec succès !";
         header('Location: /agences');

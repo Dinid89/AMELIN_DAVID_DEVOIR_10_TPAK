@@ -14,6 +14,10 @@ class User {
         $this->pdo = $database->getConnection();
     }
 
+/**
+ * Récuèpération de tous les utilisateurs de la base de données
+ */     
+
     public function getAllUsers() {
         try {
             $stmt = $this->pdo->query("SELECT * FROM users");

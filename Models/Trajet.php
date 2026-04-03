@@ -10,6 +10,10 @@ class Trajet {
         $this->pdo = $database->getConnection();
     }
 
+/**
+ * Récupération de tous les trajets disponibles avec les noms des villes de départ et d'arrivée,
+ */     
+
     public function getAllTrajets() {
         try {
             $stmt = $this->pdo->query("
@@ -34,6 +38,10 @@ class Trajet {
         }
     }
 
+/**
+ * Création d'un nouveau trajet en insérant les données dans la table trajets
+ */ 
+    
     public function createTrajet($data) {
         try {
             $stmt = $this->pdo->prepare("
@@ -53,6 +61,10 @@ class Trajet {
             throw new Exception("Erreur lors de la création du trajet: " . $e->getMessage());
         }
     }
+
+/**
+ * Récupère les trajets par ID
+ */     
 
     public function getTrajetById($id_trajets) {
     try {
@@ -76,6 +88,10 @@ class Trajet {
         throw new Exception("Erreur lors de la récupération du trajet: " . $e->getMessage());
     }
 }
+
+/**
+ * Modifier les trajets
+ */ 
 
     public function updateTrajet($id_trajets, $data) {
         try {
@@ -102,6 +118,10 @@ class Trajet {
             throw new Exception("Erreur lors de la mise à jour du trajet: " . $e->getMessage());
         }
     }
+
+/**
+ * Supprimer un trajet de la base de données
+ */     
 
     public function deleteTrajet($id_trajets) {
         try {

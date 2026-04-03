@@ -15,6 +15,9 @@ class Agence {
         $this->pdo = $database->getConnection();
     }
 
+    /**
+ * Récupère toutes les agences de la base de données
+ */
     public function getAllAgences() {
         try {
             $stmt = $this->pdo->query("SELECT * FROM agences");
@@ -23,6 +26,10 @@ class Agence {
             throw new Exception("Erreur lors de la récupération des agences: " . $e->getMessage());
         }
     }
+
+    /**
+ * Crée une nouvelle agence dans la base de données
+ */
 
     public function createAgence($ville_agence) {
         try {
@@ -33,6 +40,10 @@ class Agence {
             throw new Exception("Erreur lors de la création de l'agence: " . $e->getMessage());
         }
     }
+
+/**
+ * récupère une agence par son ID
+ */
 
     public function getAgenceById($id_agence) {
         try {
@@ -45,6 +56,10 @@ class Agence {
         }
     }
 
+/**
+ * modifier une agence dans la base de données
+ */
+
     public function updateAgence($id_agence, $ville_agence) {
         try {
             $stmt = $this->pdo->prepare("UPDATE agences SET ville_agence = :ville_agence WHERE id_agence = :id_agence");
@@ -55,6 +70,10 @@ class Agence {
             throw new Exception("Erreur lors de la mise à jour de l'agence: " . $e->getMessage());
         }
     }
+
+/**
+ * Supprimer une agence de la base de données
+ */    
 
     public function deleteAgence($id_agence) {
         try {

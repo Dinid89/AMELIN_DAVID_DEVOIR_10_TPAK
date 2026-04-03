@@ -10,6 +10,10 @@ class Login {
         $this->db = $database->getConnection();
     }
 
+/**
+ * Authentification de l'utilisateur en vérifiant l'email et le mot de passe
+ */     
+
     public function authenticate($email, $password) {
         $stmt = $this->db->prepare("SELECT * FROM users WHERE mail_users = :email");
         $stmt->execute(['email' => $email]);

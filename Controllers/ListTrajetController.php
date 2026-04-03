@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Controle des données de la BBD pour la liste des trajets vu par l'administrateur
+ */
+
 require_once __DIR__ . '/../Models/Trajet.php';
 
 class ListTrajetController {
@@ -14,7 +18,6 @@ class ListTrajetController {
             $trajets = $this->trajetModel->getAllTrajets();
             require_once __DIR__ . '/../Views/ListTrajets.php';
         } catch (Exception $e) {
-            // Gérer l'erreur, par exemple en affichant un message d'erreur
             echo "Erreur: " . $e->getMessage();
             return [];
         }

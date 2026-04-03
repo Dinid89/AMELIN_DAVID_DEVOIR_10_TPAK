@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * Controller de la page de connexion
+ */
+
+
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
