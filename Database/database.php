@@ -1,6 +1,7 @@
 <?php
 /**
- * Récupération de la base de données PHPMyAdmin
+ * Récupération de la base de données PHPMyAdmin et lien avec
+ * l'appli
  * 
  */
 
